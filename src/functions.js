@@ -32,7 +32,7 @@ getWeekName(1);
 
 //2  Найти расстояние между двумя точками в двухмерном декартовом пространстве.
 
-const decart = (x1, y1, x2, y2) => {
+const getDistanceBetweenPoints = (x1, y1, x2, y2) => {
     let a = x1 - x2;
     let b = y1 - y2;
     let c = Math.sqrt(a * a + b * b);
@@ -40,7 +40,7 @@ const decart = (x1, y1, x2, y2) => {
     console.log(`Расстояние между двумя точками: ${c.toFixed()}`);
 }
 
-decart(1,5,8,8);
+getDistanceBetweenPoints(1,5,8,8);
 
 
 //3 Вводим число(0-999), получаем строку с прописью числа.

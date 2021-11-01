@@ -122,6 +122,6 @@ const getNumberReverse = (num) => {
     console.log(Number(reversArray.join("")))
 }
 
-getNumberReverse(123)
+getNumberReverse(1234)
 
 

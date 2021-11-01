@@ -2,7 +2,7 @@
 
 const getMinNumber = (arr) => {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < arr[0]){
+        if (arr[i] < arr[0]) {
             arr[0] = arr[i];
         }
     }
@@ -16,7 +16,7 @@ getMinNumber([5, 0, -400, 355, 17, 3])
 
 const getMaxNumber = (arr) => {
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > arr[0]){
+        if (arr[i] > arr[0]) {
             arr[0] = arr[i];
         }
     }
@@ -27,22 +27,21 @@ const getMaxNumber = (arr) => {
 getMaxNumber([5, 0, -400, -755, 17, 3])
 
 
-
 //3 Найти индекс минимального элемента массива
 
 const minElementIndexOfArray = (array) => {
     let minElement = 0;
 
-    array.forEach((item, index) => {
-        if (item < array[minElement]) {
-            minElement = index;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < minElement) {
+            minElement = i
         }
-    });
+    }
 
-    console.log(`Индекс минимального элемента - ${minElement}`);
+    console.log(`Индекс элемента - ${minElement}`);
 }
 
-minElementIndexOfArray([1,5,8,-100]);
+minElementIndexOfArray([1, 5, 800, 700, -10]);
 
 
 //4 Найти индекс максимального элемента массива
@@ -50,30 +49,28 @@ minElementIndexOfArray([1,5,8,-100]);
 const maxElementIndexOfArray = (array) => {
     let maxElement = 0;
 
-    array.forEach((item, index) => {
-        if (item > array[maxElement]) {
-            maxElement = index;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > maxElement) {
+            maxElement = i
         }
-    });
+    }
 
     console.log(`Индекс максимального элемента - ${maxElement}`);
 }
 
-maxElementIndexOfArray([1,5,8,-100]);
+maxElementIndexOfArray([1, 5, 8, 100]);
 
 //5 Посчитать сумму элементов массива с нечетными индексами
 
 const getSumElements = (arr) => {
     let sum = 0;
 
-    arr.forEach((item, index) => {
-        if (index % 2 !== 0){
-            console.log( sum += item)
-        }
-    });
-};
-
-getSumElements([0,1, 2,3,4,5,6,7, 8, 9])
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2) sum += arr[i];
+    }
+    console.log(`Сумма элементов - ${sum}`)
+}
+getSumElements([0, 1, 2, 3, 4, 5, 6, 7, 8]);
 
 //6 Сделать реверс массива (массив в обратном направлении)
 
@@ -87,7 +84,7 @@ const arrayReverse = (arr) => {
     console.log(reverse);
 }
 
-arrayReverse([11,22,33])
+arrayReverse([11, 22, 33])
 
 //7 Посчитать количество нечетных элементов массива
 
@@ -103,7 +100,7 @@ const sumOddNumbers = (arr) => {
     console.log(sumNumbers);
 }
 
-sumOddNumbers([1,3,5, 6, 8]);
+sumOddNumbers([1, 3, 5, 6, 8]);
 
 
 //8 Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2
@@ -116,7 +113,7 @@ const changePlaceOfArray = (array) => {
     console.log(array)
 }
 
-changePlaceOfArray([1,2,3,4, 5, 6, 7, 8])
+changePlaceOfArray([1, 2, 3, 4, 5, 6, 7, 8])
 
 
 //9 Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))
@@ -124,9 +121,9 @@ changePlaceOfArray([1,2,3,4, 5, 6, 7, 8])
 //Пузырьком
 
 const bubbleSort = (array) => {
-    for (let n = 0; n < array.length; n++){
-        for (let i = 0; i < array.length - 1 - n; i++){
-            if (array[i] > array[i + 1]){
+    for (let n = 0; n < array.length; n++) {
+        for (let i = 0; i < array.length - 1 - n; i++) {
+            if (array[i] > array[i + 1]) {
                 let buff = array[i];
 
                 array[i] = array[i + 1]
