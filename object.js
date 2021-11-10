@@ -51,6 +51,7 @@ const arrayTitle = [
 
 const findTitle = (arr) => {
     const filteredArr = [];
+
     arrayTitle.forEach((item) => {
         const keysAndValues = Object.entries(item);
 
@@ -88,9 +89,6 @@ const sortCharacters = (str) => {
 };
 
 console.log(sortCharacters("sparrow"));
-
-
-
 
 //5. Принимая число, ваша функция должна найти следующий
 // положительный палиндром большего размера.
