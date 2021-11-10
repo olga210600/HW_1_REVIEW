@@ -10,33 +10,34 @@ const getNumber = (a, b) => {
     } else {
         num = a + b;
     }
-    console.log(num)
+    return num
 }
 
+console.log(getNumber(1,2))
 //тернарный
 
 const getNumberTernar = (a, b) => a % 2 === 0 ? a * b : a + b;
 
-getNumber(5, 10)
+ getNumber(5, 10)
 console.log(getNumberTernar(5, 10))
 
 // 2 Определить какой четверти принадлежит точка с координатами (х,у)
 
 const getCoordinate = (x, y) => {
     if (x > 0 && y > 0) {
-        console.log('1 четверть');
+       return '1 четверть';
     } else if (x < 0 && y > 0) {
-        console.log('2 четверть');
+        return '2 четверть';
     } else if (x < 0 && y < 0) {
-        console.log('3 четверть');
+        return '3 четверть';
     } else if (x > 0 && y < 0) {
-        console.log('4 четверть');
+        return '4 четверть';
     } else {
-        console.log('Точка лежит на оси')
+        return 'Точка лежит на оси'
     }
 }
 
-getCoordinate(5, 7);
+console.log( getCoordinate(5, 7));
 
 
 // 3 Найти суммы только положительных из трех чисел
@@ -57,10 +58,10 @@ const positiveNum = (a, b, c) => {
         sum += c;
     }
 
-    console.log(sum);
+    return sum;
 }
 
-positiveNum(1, 5, -3)
+console.log(positiveNum(1, 5, -3))
 
 
 // 4  Посчитать выражение (макс(а*б*с, а+б+с))+3
@@ -74,10 +75,10 @@ const maxExpression = (a, b, c) => {
         sum = (a + b + c) + 3;
     }
 
-    console.log(sum);
+    return sum;
 }
 
-maxExpression(5, 3, 1)
+console.log(maxExpression(5, 3, 1))
 
 
 //5  Написать программу определения оценки студента по его рейтингу, на основе
