@@ -25,7 +25,7 @@ const  getNumber = (array) => {
     return (odd.length > notOdd.length) ? notOdd[0] : odd[0]
 }
 
-console.log(getNumber([6, 2, 4, 7, 2, 6]))
+console.log(getNumber([5, 7, 9, 2]))
 
 // 3. Принимая массив объектов и случайную строку. У объектов может
 // быть ключ: «title» с разными значениями. Создайте алгоритм, который
@@ -88,3 +88,31 @@ const sortCharacters = (str) => {
 };
 
 console.log(sortCharacters("sparrow"));
+
+
+
+
+//5. Принимая число, ваша функция должна найти следующий
+// положительный палиндром большего размера.
+
+function getNextPalindrome(number) {
+    let reverse = "";
+    for (let i = String(number).length - 1; i >= 0; i--) {
+        reverse += String(number)[i];
+    }
+    return reverse;
+}
+
+function Palindrome(num) {
+    if (String(num).length < 2) {
+        return 11
+    }
+
+    for (let i = num + 1; ; i++) {
+        if (String(i) === getNextPalindrome(i)) {
+            return i
+        }
+    }
+}
+
+console.log(Palindrome(774))
