@@ -3,32 +3,32 @@
 const getWeekName = (num) => {
     switch(num) {
         case 1:
-            console.log('Понедельник');
+            return 'Понедельник';
             break;
         case 2:
-            console.log('Вторник');
+            return 'Вторник';
             break;
         case 3:
-            console.log('Среда');
+            return 'Среда';
             break;
         case 4:
-            console.log('Четверг');
+            return 'Четверг';
             break;
         case 5:
-            console.log('Пятница');
+            return 'Пятница';
             break;
         case 6:
-            console.log('Суббота');
+            return 'Суббота';
             break;
         case 7:
-            console.log('Воскресенье');
+            return 'Воскресенье';
             break;
         default:
-            console.log('Неверный день недели');
+            return'Неверный день недели';
     }
 }
 
-getWeekName(1);
+console.log(getWeekName(1));
 
 //2  Найти расстояние между двумя точками в двухмерном декартовом пространстве.
 
@@ -37,10 +37,10 @@ const getDistanceBetweenPoints = (x1, y1, x2, y2) => {
     let b = y1 - y2;
     let c = Math.sqrt(a * a + b * b);
 
-    console.log(`Расстояние между двумя точками: ${c.toFixed()}`);
+    return(`Расстояние между двумя точками: ${c.toFixed()}`);
 }
 
-getDistanceBetweenPoints(1,5,8,8);
+console.log( getDistanceBetweenPoints(1,5,8,8));
 
 
 //3 Вводим число(0-999), получаем строку с прописью числа.

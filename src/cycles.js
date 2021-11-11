@@ -14,6 +14,7 @@ const quantityAndNumber = () => {
 
     console.log(`Сумма чисел - ${sum}`);
     console.log(`Количество чисел - ${quantity}`);
+    return ({ sum, quantity})
 }
 
 quantityAndNumber()
