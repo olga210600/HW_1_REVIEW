@@ -1,5 +1,5 @@
 describe('Should cover conditionalOperators file', function () {
-    describe('First task : If a is even count a * b, otherwise a + b ', function () {
+    describe('1 : If a is even count a * b, otherwise a + b ', function () {
         it('should return mult for two numders', function () {
             expect(getNumber(20, 10)).to.be.equal(200);
         });
@@ -8,7 +8,7 @@ describe('Should cover conditionalOperators file', function () {
         });
     });
 
-    describe('First task.ternar : If a is even count a * b, otherwise a + b ', function () {
+    describe('1.ternar : If a is even count a * b, otherwise a + b ', function () {
         it('should return mult for two numders', function () {
             expect(getNumberTernar(20, 10)).to.be.equal(200);
         });
@@ -17,7 +17,7 @@ describe('Should cover conditionalOperators file', function () {
         });
     });
 
-    describe('Second task : Determine which quarter the point with coordinates belongs to (х,у)', function () {
+    describe('2 : Determine which quarter the point with coordinates belongs to (х,у)', function () {
         it('should return quarter for x: 5 y: 5', function () {
             expect(getCoordinate(5, 5)).to.be.equal('1 четверть')
         })
@@ -32,7 +32,7 @@ describe('Should cover conditionalOperators file', function () {
         })
     })
 
-    describe('Three task : Find the sums of only positives of three numbers ', function () {
+    describe('3 : Find the sums of only positives of three numbers ', function () {
         it('should return only sum posive numbers(all numbers negative) ', function () {
             expect(positiveNum(-7, -2, -1)).to.be.equal(0)
         })
@@ -59,7 +59,7 @@ describe('Should cover conditionalOperators file', function () {
         })
     })
 
-    describe('Four : Calculate the expression (max (a * b * c, a + b + c)) + 3', function () {
+    describe('4 : Calculate the expression (max (a * b * c, a + b + c)) + 3', function () {
         it('should return multiplied numbers', function () {
             expect(maxExpression(5, 4, 3)).to.be.equal(63);
         });
@@ -68,7 +68,7 @@ describe('Should cover conditionalOperators file', function () {
         });
     });
 
-    describe('Five : Write a program for determining a students grade by his rating ', function () {
+    describe('5 : Write a program for determining a students grade by his rating ', function () {
         it('should return F', function () {
             expect(getGradeWithSwitch(5)).to.equal('F');
         });

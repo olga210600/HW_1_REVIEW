@@ -12,34 +12,33 @@ const quantityAndNumber = () => {
         }
     }
 
-    console.log(`Сумма чисел - ${sum}`);
-    console.log(`Количество чисел - ${quantity}`);
-    return ({ sum, quantity})
+    return `Сумма чисел - ${sum}, количество чисел - ${quantity}`;
+
+    // return { sum, quantity}
 }
 
-quantityAndNumber()
+console.log(quantityAndNumber())
 
 
 //2 Проверить простое ли число? (число называется простым, если оно делится только само на себя и на 1)
 
 const simpleNum = (numb) => {
     if (numb < 2) {
-        console.log(`Число ${numb} - составное`);
-        return;
+        return(`Число ${numb} - составное`);
     }
 
     for (let i = 2; i < numb; i++) {
 
         if (numb % i === 0) {
-            console.log(`Число ${numb} - составное`);
-            return;
+            return(`Число ${numb} - составное`);
+
         }
     }
 
-    console.log(`Число ${numb} - простое`);
+    return(`Число ${numb} - простое`);
 }
 
-simpleNum(6)
+console.log( simpleNum(6))
 
 
 //3  Найти корень натурального числа с точностью до целого (рассмотреть вариант последовательного подбора и метод бинарного поиска)
@@ -54,10 +53,10 @@ const naturalNumber = (numb) => {
         }
     }
 
-    console.log(sum);
+    return sum;
 }
 
-naturalNumber(5)
+console.log(naturalNumber(5))
 
 
 //Бинарный поиск
@@ -76,10 +75,10 @@ const binarySearch = (value) => {
         }
     }
 
-    console.log(Math.round(index));
+    return Math.round(index);
 }
 
-binarySearch(5)
+console.log(binarySearch(25))
 
 
 //4 Вычислить факториал числа n. n! = 1*2*…*n-1*n;
@@ -105,10 +104,10 @@ const getNumberSum = (num) => {
         sum += Number(item);
     })
 
-    console.log(sum);
+    return sum;
 }
 
-getNumberSum(21932);
+console.log(getNumberSum(21932));
 
 //6 Вывести число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
 
@@ -120,9 +119,9 @@ const getNumberReverse = (num) => {
         reversArray.unshift(item)
     })
 
-    console.log(Number(reversArray.join("")))
+    return Number(reversArray.join(""));
 }
 
-getNumberReverse(1234)
+console.log(getNumberReverse(1234))
 
 
