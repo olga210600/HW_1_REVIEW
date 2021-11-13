@@ -14,10 +14,12 @@ describe('Should cover function file', function () {
         expect(getDistanceBetweenPoints(1, 5, 8, 8)).to.eql('Расстояние между двумя точками: 8');
     });
 
-    // describe('Three task : Enter the number (0-999), we get a line with the words of the number', function () {
-    //     it('should return line with the words of the number', function () {
-    //         expect(convert_thousands(1000)).to.be.equel('one thousand');
-    //     });
-    // });
+    it('Task 3 : should return line with the words of the number', function () {
+        expect(convert_thousands(1001)).to.be.eql('one thousand one');
+        expect(convert_hundreds(100)).to.be.eql('one hundred ');
+        expect(convert_tens(9)).to.be.eql('nine');
+        expect(convert_tens(11)).to.be.eql('eleven');
+    });
+
 
 });
