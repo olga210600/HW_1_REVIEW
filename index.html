@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet"/>
 
 </head>
 <body>
 
+<div id="mocha"></div>
+<div id="messages"></div>
+<div id="fixtures"></div>
+<script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/2.2.2/faker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.0.1/mocha.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/1.4.1/chai.js"></script>
+<script src="src/arrays.js"></script>
 <script src="src/conditionalOperators.js"></script>
 <script src="src/cycles.js"></script>
-<script src="src/arrays.js"></script>
 <script src="src/functions.js"></script>
+<script>mocha.setup('bdd')</script>
+<script src="test/arrays.spec.js"></script>
+<script src="test/conditionalOperators.spec.js"></script>
+<script src="test/cycles.spec.js"></script>
+<script src="test/function.spec.js"></script>
+<script>
+    mocha.run();
+</script>
+
+
 
 </body>
 </html>
+
+

@@ -1,5 +1,7 @@
 //1 Найти минимальный элемент массива
 
+
+
 const getMinNumber = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] < arr[0]) {
@@ -7,10 +9,10 @@ const getMinNumber = (arr) => {
         }
     }
 
-    console.log(arr[0])
+    return arr[0]
 }
 
-getMinNumber([5, 0, -400, 355, 17, 3])
+console.log(getMinNumber([5, 0, -400, 355, 17, 3]))
 
 //2  Найти максимальный элемент массива
 
@@ -21,10 +23,10 @@ const getMaxNumber = (arr) => {
         }
     }
 
-    console.log(arr[0])
+   return arr[0]
 }
 
-getMaxNumber([5, 0, -400, -755, 17, 3])
+console.log(getMaxNumber([5, 0, -400, -755, 17, 3]))
 
 
 //3 Найти индекс минимального элемента массива
@@ -38,10 +40,10 @@ const minElementIndexOfArray = (array) => {
         }
     }
 
-    console.log(`Индекс элемента - ${minElement}`);
+    return (`Индекс элемента - ${minElement}`);
 }
 
-minElementIndexOfArray([1, 5, 800, 700, -10]);
+console.log(minElementIndexOfArray([1, 5, 800, 700, -10]));
 
 
 //4 Найти индекс максимального элемента массива
@@ -55,10 +57,10 @@ const maxElementIndexOfArray = (array) => {
         }
     }
 
-    console.log(`Индекс максимального элемента - ${maxElement}`);
+    return (`Индекс максимального элемента - ${maxElement}`);
 }
 
-maxElementIndexOfArray([1, 5, 8, 100]);
+console.log(maxElementIndexOfArray([1, 5, 8, 100]));
 
 //5 Посчитать сумму элементов массива с нечетными индексами
 
@@ -68,9 +70,9 @@ const getSumElements = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         if (i % 2) sum += arr[i];
     }
-    console.log(`Сумма элементов - ${sum}`)
+    return (`Сумма элементов - ${sum}`)
 }
-getSumElements([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+console.log( getSumElements([0, 1, 2, 3, 4, 5, 6, 7, 8]));
 
 //6 Сделать реверс массива (массив в обратном направлении)
 
@@ -81,10 +83,10 @@ const arrayReverse = (arr) => {
         reverse.unshift(arr[i]);
     }
 
-    console.log(reverse);
+    return reverse;
 }
 
-arrayReverse([11, 22, 33])
+console.log(arrayReverse([11, 22, 33]))
 
 //7 Посчитать количество нечетных элементов массива
 
@@ -97,10 +99,10 @@ const sumOddNumbers = (arr) => {
         }
     }
 
-    console.log(sumNumbers);
+    return(sumNumbers);
 }
 
-sumOddNumbers([1, 3, 5, 6, 8]);
+console.log(sumOddNumbers([1, 3, 5, 6, 8]));
 
 
 //8 Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2
@@ -110,10 +112,10 @@ const changePlaceOfArray = (array) => {
         array.push(array.shift());
     }
 
-    console.log(array)
+    return array
 }
 
-changePlaceOfArray([1, 2, 3, 4, 5, 6, 7, 8])
+console.log(changePlaceOfArray([1, 2, 3, 4, 5, 6, 7, 8]))
 
 
 //9 Отсортировать массив (пузырьком (Bubble), выбором (Select), вставками (Insert))
@@ -132,10 +134,10 @@ const bubbleSort = (array) => {
         }
     }
 
-    console.log(array);
+    return array;
 }
 
-bubbleSort([188, 1259, 102, 102, 10, 12, 84, 1, 0, 2, 3, 9, 7])
+console.log(bubbleSort([188, 1259, 102, 102, 10, 12, 84, 1, 0, 2, 3, 9, 7]))
 
 
 // Выбором
