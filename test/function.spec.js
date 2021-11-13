@@ -20,6 +20,4 @@ describe('Should cover function file', function () {
         expect(convert_tens(9)).to.be.eql('nine');
         expect(convert_tens(11)).to.be.eql('eleven');
     });
-
-
 });
