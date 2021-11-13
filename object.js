@@ -101,7 +101,7 @@ function getNextPalindrome(number) {
     return reverse;
 }
 
-function Palindrome(num) {
+function palindrome(num) {
     if (String(num).length < 2) {
         return 11
     }
@@ -113,4 +113,4 @@ function Palindrome(num) {
     }
 }
 
-console.log(Palindrome(774))
+console.log(palindrome(774))
