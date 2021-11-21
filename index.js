@@ -1,17 +1,51 @@
-class Node {
-    constructor(data, next = null) {
-        this.data = data
-        this.next = next
-    }
-}
 
-class LinkedList {
-    constructor() {
-        this.head = null
-        this.tail = null
+const addBtn = document.querySelector('.btn-add');
+const removeBtn = document.querySelector('.btn-remove');
+const inputValue = document.querySelector('.input-values');
+const resultWrapper = document.querySelector('.result-wrapper');
+
+
+function Node(value, next = null) {
+    this.value = value;
+    this.next = next;
+}
+const list = new LinkedList;
+
+function LinkedList() {
+    this.head = null;
+    this.size = 0;
+
+    this.Head = () => {
+        return this.head;
+    };
+
+    this.add = (item) => {
+        this.head = new Node(item, this.head);
+        this.size++;
+    };
+
+    this.remove = () => {
+        if (!this.head) return;
+        this.head = this.head.next;
+        this.size--;
+    };
+
+    this.length = () => {
+        return this.size;
+    };
+
+    this.addstart = (data) => {
+        const node = new Node(data, this.head)
+
+        this.head = node
+
+        if (!this.tail){
+            this.tail = node
+        }
     }
-    addend(data){
-        const node = new Node(data)
+
+    this.addend = (data) => {
+        const node = new NewNode(data)
 
         if(this.tail){
             this.tail.next = node
@@ -24,17 +58,7 @@ class LinkedList {
         this.tail = node
     }
 
-    addstart(data){
-        const node = new Node(data, this.head)
-
-        this.head = node
-
-        if (!this.tail){
-            this.tail = node
-        }
-    }
-
-    find(data) {
+        this.find = (data) => {
         if (!this.head) {
             return
         }
@@ -47,117 +71,83 @@ class LinkedList {
             current = current.next
         }
     }
+    this.indexOf = (data) => {
+        let count = 0;
+        let current = this.head;
 
-    toArray() {
-        const output = []
-        let current = this.head
+        while (current != null) {
 
-        while (current){
-            output.push(current)
-            current = current.next
+            if (current.data === data)
+                return count;
+            count++;
+            current = current.next;
         }
-        return output
+
+        return -1;
     }
+}
 
-    remove(data){
-        if (!this.head){
-            return
-        }
 
-        while (this.head && this.head.data === data){
-            this.head = this.head.next
-        }
+function checkValue() {
 
-        let current = this.head
-        while (current.next){
-            if (current.next.data === data){
-                current.next = current.next.next
-            }else {
-                current = current.next
+    if (this.textContent === 'Add') {
+        list.add(inputValue.value);
+        addList(list);
+    }
+    if (this.textContent === 'Remove') {
+        removePrintList(list);
+        list.remove();
+    }
+}
+
+function addList(item) {
+
+    const main = item.Head();
+    const article = document.createElement('article');
+    resultWrapper.prepend(article);
+
+    for (const key of Object.values(main)) {
+        const div = document.createElement('div');
+        div.className = 'linked-items';
+        if (typeof key === 'object' && key !== null) {
+            for (const item of Object.values(key)) {
+                const div = document.createElement('div');
+
+                div.className = 'linked-items';
+                article.append(div);
+                div.append(item);
+                return;
             }
+
         }
 
-        if (this.tail.data === data) {
-            this.tail = current
-        }
+        article.append(div);
+
+        div.append(key);
+
     }
 }
 
+function removePrintList() {
 
+    for (let i = 0; i <= document.getElementsByClassName('linked-items').length; i++) {
 
-function removeLastNode(head) {
-    if (head == null)
-        return null;
+        if (i === document.getElementsByClassName('linked-items').length - 1) {
 
-    if (head.next == null) {
-        return null;
+            document.getElementsByClassName('linked-items')[i].remove();
+            document.getElementsByClassName('linked-items')[i - 1].remove();
+            if (document.getElementsByClassName('linked-items')[i - 2] === undefined) return;
+
+            document.getElementsByClassName('linked-items')[i - 2].textContent = 'null';
+        }
     }
-
-    let second_last = head;
-    while (second_last.next.next != null)
-        second_last = second_last.next;
-
-    second_last.next = null;
-
-    return head;
+    for (let i = 0; i <= document.getElementsByTagName('article').length; i++) {
+        if (i === document.getElementsByTagName('article').length - 1) {
+            document.getElementsByTagName('article')[i].remove();
+        }
+    }
+    return;
 }
-//
-// function findElement(index) {
-//     let currentNode = this.head;
-//     let count = 0;
-//
-//     while (currentNode) {
-//         if (count === index) {  // found the element
-//             return currentNode;
-//         }
-//
-//         count++;  // increment counter
-//         currentNode = currentNode.next;  // move to next node
-//     }
-//
-//     return -1;
-// }
-//  function getIndexOf(value) {
-//     let current = this.head; // current is a head of our list
-//     let index = 0; // index which will be returned
-//
-//     while(current) {
-//         if (current.value === value) {
-//             return index;
-//         }
-//
-//         current = current.next;
-//         index++;
-//     }
-//
-//     return -1;
-// }
 
-
-
-
-const list = new LinkedList();
-list.addend('hi');
-list.addend('my');
-list.addend('name');
-list.addend('Sergey');
-list.addend(55);
-
-list.addstart('Maya')
-
-
-console.log(list)
-list.remove('hi')
-
-console.log(list.find('name'))
-removeLastNode()
-
-console.log(list.toArray())
-console.log(list.toArray().length)
-console.log(list.toArray()[1])
-console.log(list.toArray().indexOf('name'))
-// console.log(findElement('name'))
-// console.log(getIndexOf(1))
-// console.log(list.getAt('1'))
-
-// console.log("Count of nodes is " + getCount());
+addBtn.addEventListener('click', checkValue);
+removeBtn.addEventListener('click', checkValue);
