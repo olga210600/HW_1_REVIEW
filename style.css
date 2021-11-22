@@ -1,0 +1,53 @@
+body{
+    background:oldlace;
+}
+
+.input-btn-wrapper {
+    display: flex;
+    margin: 50px auto 0;
+    width: 460px;
+}
+
+input {
+    width: 270px;
+    height: 30px;
+}
+
+.btn-wrapper {
+    display: flex;
+    padding-left: 10px;
+    width: 400px;
+    justify-content: space-around;
+}
+
+button {
+    width: 70px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-remove {
+    background: #F95738;
+    padding-top: 5px;
+}
+
+.btn-add {
+    background: limegreen;
+    padding-top: 5px;
+}
+
+.result-wrapper {
+    display: flex;
+    width: 150px;
+}
+
+.head-wrapper {
+    margin: 20px;
+}
+
+.result-wrapper p {
+    width: 100px;
+    display: block;
+}
+
