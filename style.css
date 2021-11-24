@@ -1,0 +1,16 @@
+.photos{
+    display: flex;
+    width: 1030px;
+    flex-wrap: wrap;
+    margin: auto;
+    transition: 0.5s;
+}
+
+img{
+    width: 200px;
+    margin: 3px
+}
+
+img:hover{
+    transform: scale(1.03);
+}
