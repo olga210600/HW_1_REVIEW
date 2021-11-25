@@ -87,6 +87,8 @@ getPostsBtn.addEventListener('click', async () => {
 //
 // })
 
+
+
 function getPhotos() {
     return fetch('https://jsonplaceholder.typicode.com/photos?_limit=15', {
         headers: {
