@@ -1,9 +1,9 @@
 const photosList = document.querySelector('.photos');
 const getPostsBtn = document.querySelector('.addBtn');
-let img = document.querySelector('img');
+let img = document.querySelectorAll('.clickable');
 
-
-const imgArray = []
+// console.log(img)
+// const imgArray = []
 
 const state = {
     photos: [],
@@ -15,7 +15,7 @@ const createPhotos = (photoItem) => {
     <div class = "photoWrapper">
         <div class="post">
 <!--            <div class="wrapperBody">${photoItem.body}</div>-->
-            <img src="${photoItem.url}"> 
+            <img class="clickable" src="${photoItem.url}"> 
         </div>
     </div>
        
@@ -27,6 +27,19 @@ const createPhotos = (photoItem) => {
 // let arrayPhotos = photos
 // console.log(arrayPhotos)
 
+// window.addEventListener('load', function() {
+//     let images = document.querySelectorAll('.clickable');
+//     /* images - это NodeList, объект, похожий на обычный массив, но не совсем. Нам необходимо перебрать все элементы images и повесить им обработчик клика */
+//     images.forEach(function(image) {
+//         image.addEventListener('click', imageClickFunc);
+//     });
+//
+//     /* Теперь осталось написать сам обработчик. Это обычная функция, для которой this будет кликнутый элемент */
+//
+//     function imageClickFunc() {
+//         alert('Привет! Ты кликнул на ' + this);  // ну или любой другой код
+//     }
+// });
 
 
 const fillPostList = (photos) => {
@@ -35,6 +48,11 @@ const fillPostList = (photos) => {
     if (photos.length) {
         photos.forEach((photo, index) => photosList.innerHTML += createPhotos(photo, index))
     }
+    aaa = photos
+
+
+
+
 
 // зашла в массив обьектов и получила id
 
@@ -44,12 +62,23 @@ const fillPostList = (photos) => {
         }
         console.log(false)
     })
+
+
 }
+
+// aaa.addEventListener('mouseover', () => {
+//     console.log('hey im therebbbbbbbbbbbbbbbbbbb')
+// })
+
 
 getPostsBtn.addEventListener('click', async () => {
     await getPhotos();
     fillPostList(state.photos);
-    console.log('juntyhntntyhnyt' ,state)
+    // console.log('juntyhntntyhnyt' ,state)
+    //
+    // imgArray.push(img)
+    //
+    // console.log('imggggg', imgArray)
 
 })
 
